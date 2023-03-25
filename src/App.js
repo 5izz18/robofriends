@@ -12,6 +12,7 @@ class APP extends Component{
         this.state={
             robots:robotss,
             searchfield:'',
+            robo:'',
         }
     }
     onSearchChanged=(event)=>{
