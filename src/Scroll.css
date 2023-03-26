@@ -1,0 +1,10 @@
+.sticky{ 
+    border: 2px solid rgba(1000, 236, 179,1)10%;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    /* background-color: aliceblue; */
+    overflow: hidden;
+    /* background-position:fixed; */
+
+}

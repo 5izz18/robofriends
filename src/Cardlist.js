@@ -1,15 +1,16 @@
 import React from "react";
 import Card from "./Card";
-import { robotss } from "./robots";
 
-const Cardlist=()=>{
-// import { robots } from "./robots"; can also be acsesd as --> Cardlist({robots}) then we need to return robots.map(){} directly without assigming it to variable
-const cardsArray = robotss.map((user,i)=>{
+
+const Cardlist=({robts})=>{
+// robts is the variable from APP.js <Cardlist robts=.../> passed as parameter here so that value in the robts will be taken to display that particular card 
+const cardsArray = robts.map((user,i)=>{
+    // user is a parameter for users 
     return (
     <Card key={i} 
-    id={robotss[i].id} 
-    name={robotss[i].name} 
-    email={robotss[i].email} />
+    id={robts[i].id} 
+    name={robts[i].name} 
+    email={robts[i].email} />
     );
     // react keeps track of evry elements in dom so we use key to give unique value for each element
     // i is the index user is for the arrayobjects
@@ -29,7 +30,6 @@ like this we accced the 1st array objects of robot object in robot.js robots[o]-
 </div>
     )
 }
-
 export default Cardlist;
 
 /*
