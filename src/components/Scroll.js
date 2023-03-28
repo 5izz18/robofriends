@@ -2,7 +2,7 @@ import React from "react";
 
 const Scroll = (prop) => {
     return(
-        <div style={{overflow:'scroll',border:'2px solid rgba(9, 236, 179)',height:'800px'}}>
+        <div style={{overflow:'scroll',height:'800px'}}>
         {/* // <div> */}
         {/* we can add css like this also or {JS expression{css}} 1st flowerbracket means JS expression and 2nd bracket means css code */}
         {prop.children}

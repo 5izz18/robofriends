@@ -1,7 +1,7 @@
 import React,{Component} from "react";
-import Cardlist from "./Cardlist";
-import SearchBox from "./SearchBox"
-import Scroll from './Scroll'
+import Cardlist from "../components/Cardlist";
+import SearchBox from "../components/SearchBox"
+import Scroll from '../components/Scroll'
 // import { robotss } from "./robots";
 // required if we use something from robots.js file but now we are getting users from the web
 import './APP.css'
@@ -37,10 +37,14 @@ class APP extends Component{
         // })/* robot is the parameter name it can be anything */
     }
     render(){
-       const robofilter=this.state.robots.filter(robot =>{
-        return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+        const{robots,searchfield}=this.state;
+        // with the above code we can use robots and search field directly instead of doing this.state.robots/searchfield
+       const robofilter=robots.filter(robot =>{
+        return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+        // writing only robot.name.toLowerCase() & searchfield toLowerCase() because we have already called it above using const
     })/* robot is the parameter name it can be anything */
-    if(this.state.robots.length===0){
+    if(!robots.length){
+    //if(robots.length===0) == (!robots.length), because by default robots.lenght will b checked if its 0, wich will return false so we use !(not) to turn it into false
         return(
         <div className="tc">
         <h1 className="f1">ROBOFRIENDS</h1>
@@ -49,7 +53,7 @@ class APP extends Component{
     }
     else{   
     return (
-            <div className="tc ">
+            <div className="tc">
             <h1 className="f1">ROBOFRIENDS</h1>
             <SearchBox searchChange={this.onSearchChanged} />
            {/* calling the onsearchchanged function within searchbox  */}
@@ -63,5 +67,15 @@ class APP extends Component{
     }
 }
 }
+
+/*
+     if-else can be written using returnery as
+     synatx:
+     return expression ?
+     statements:
+     (
+        statements
+     )
+*/
 
 export default APP;
