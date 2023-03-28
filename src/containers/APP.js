@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import Cardlist from "../components/Cardlist";
 import SearchBox from "../components/SearchBox"
 import Scroll from '../components/Scroll'
+import Errorboundry from '../components/ErrorBoundry'
 // import { robotss } from "./robots";
 // required if we use something from robots.js file but now we are getting users from the web
 import './APP.css'
@@ -59,8 +60,10 @@ class APP extends Component{
            {/* calling the onsearchchanged function within searchbox  */}
            <Scroll>
            {/* scroll is a componenet that we have created to wrap Cardlist component */}
+           <Errorboundry>
                 <Cardlist robts={robofilter}/>
         {/* robts is a vriable/property to which robofilter()is assigned*/}
+            </Errorboundry>
            </Scroll>
         </div>
         );

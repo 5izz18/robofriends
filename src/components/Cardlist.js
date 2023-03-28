@@ -4,6 +4,9 @@ import Card from "./Card";
 
 const Cardlist=({robts})=>{
 // robts is the variable from APP.js <Cardlist robts=.../> passed as parameter here so that value in the robts will be taken to display that particular card 
+/*if(true){
+    throw new Error('NOOOOOOO');
+}*/ //the above if statement is to just test if our error handling method that is componentDidCatch() is running correctly
 const cardsArray = robts.map((user,i)=>{
     // user is a parameter for users 
     return (
