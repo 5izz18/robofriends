@@ -19,7 +19,7 @@ class APP extends Component{
         }
     }
     componentDidMount(){
-        fetch('https:/jsonplaceholder.typicode.com/users')
+        fetch('https://jsonplaceholder.typicode.com/users')
         // fetch is a predefined method present in all browsers to make a request to the servers.Here we are using fetch to make request to this url link that provides the demo users
         .then(response=> response.json())
         .then(users=> this.setState({robots:users})
